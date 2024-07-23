@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import {
   UserGroupIcon,
@@ -17,8 +17,10 @@ const links = [
 ];
 
 export default function NavLinks() {
-  const pathname = usePathname();  // Hook is used here at the top level of the component
+  // Correct usage: usePathname is called at the top level of the component function.
+  const pathname = usePathname(); 
 
+  // Mapping over links array to create Link components.
   return (
     <>
       {links.map((link) => {
@@ -30,7 +32,7 @@ export default function NavLinks() {
             className={clsx(
               'flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3',
               {
-                'bg-sky-100 text-blue-600': pathname === link.href,  // Checks condition based on pathname
+                'bg-sky-100 text-blue-600': pathname === link.href, // Uses pathname to conditionally style the active link
               },
             )}
           >
