@@ -18,7 +18,7 @@ const links = [
 
 export default function NavLinks() {
   // Correct usage: usePathname is called at the top level of the component function.
-  const pathname = usePathname(); 
+  const pathname = usePathname() 
 
   // Mapping over links array to create Link components.
   return (
